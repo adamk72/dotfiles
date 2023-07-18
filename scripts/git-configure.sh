@@ -1,2 +1,2 @@
 #!/bin/bash
-cp ./.gitconfig $HOME/.gitconfig
+cp $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
