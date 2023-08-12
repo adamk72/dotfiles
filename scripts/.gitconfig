@@ -1,6 +1,6 @@
 [user]
-	name = Luke Mauldin
-	email = luke.mauldin@zaelot.com
+	name = Adam Kecskes
+	email = adam.kecskes@zaelot.com
 [color]
     branch = auto
     diff = auto
@@ -15,24 +15,36 @@
     ff = true
 	conflictStyle = diff3
 [alias]
-    br = branch
-    cm = commit
-    co = checkout
-    cp = cherry-pick
-    rf = rebase
-    st = status
-    plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    ls = log --graph --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=human
-    ll = log  --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-    log = log -M
-    filelog = log -u
-    dl = "!git ll -1" # show files modified in last commit
-    dlc = diff --cached HEAD^ # show a diff of clast commit
-    #diff = diff -M --word-diff
-    dc = diff --cached
-    la = "!git config -l | grep alias | cut -c 7-" # list all aliases
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  a = add
+  aa = add .
+  aliases = config --get-regexp '^alias\\.'
+  am = commit --amend
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)% (color:reset) - %(contents:subject) %(color:green)(%(committerda te:relative)) [%(authorname)]' --sort=-committerdate
+  ci = commit
+  cine = commit --amend --no-edit
+  cinit = !git add . && git commit -m\"chore: initial checkin\"
+  clean = clean -i
+  co = checkout
+  cob = checkout -b
+  cp = cherry-pick
+  dc = diff --cached # from Luke
+  dl = "!git ll -1" # show files modified in last commit; from Luke
+  dlc = diff --cached HEAD^ # show a diff of clast commit; from Luke
+  filelog = log -u # from Luke
+  la = "!git config -l | grep alias | cut -c 7-" # list all aliases; from Luke; alt to 'aliases'
+  ll = log  --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat # from Luke
+  log = log -M # from Luke
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit # from Luke
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all # from Luke
+  ls = log --graph --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=human # from Luke
+  plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit # from Luke
+  rf = rebase # from Luke
+  rv = remote -v
+  s = status -sb
+  save = !git add -A && git commit -m 'chore: savepoint'
+  st = status
+  undo = reset HEAD~1 --mixed
+  w = whatchanged
 [init]
 	defaultBranch = main
 [safe]
