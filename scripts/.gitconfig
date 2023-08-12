@@ -21,6 +21,7 @@
   am = commit --amend
   br = branch --format='%(HEAD) %(color:yellow)%(refname:short)% (color:reset) - %(contents:subject) %(color:green)(%(committerda te:relative)) [%(authorname)]' --sort=-committerdate
   ci = commit
+  cim = commit -m
   cine = commit --amend --no-edit
   cinit = !git add . && git commit -m\"chore: initial checkin\"
   clean = clean -i
